@@ -80,7 +80,6 @@ def get_weather_data(location_info_list, start_date, api_key):
 
                     # To get the condition of the weather - Cloudy, Snow, Clear, Partly Cloudy etc.
                     cond = hour.d.get('summary', '').lower()
-                    #print ("----",cond)
                     #For cloudy weather, we will treat it as rain, clear as sunny and snow as snow
                     if 'snow' in cond:
                        weather_data['condition'] = weather_data.get('condition', []) + ['Snow']
@@ -91,7 +90,6 @@ def get_weather_data(location_info_list, start_date, api_key):
                     else:
                        weather_data['condition'] = weather_data.get('condition', []) + ['Rain']                        
 
-                    #weather_data['condition'] = weather_data.get('condition', []) + [hour.d.get('summary', '')]
                     weather_data['temperature'] = weather_data.get('temperature', []) + [hour.d.get('temperature')]
                     weather_data['humidity'] = weather_data.get('humidity', []) + [hour.d.get('humidity')]
                     weather_data['pressure'] = weather_data.get('pressure', []) + [hour.d.get('pressure')]
