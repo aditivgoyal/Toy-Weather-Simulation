@@ -85,7 +85,7 @@ def get_weather_data(location_info_list, start_date, api_key):
                     if 'Clear' not in cond:
                         weather_data['condition'] = weather_data.get('condition', []) + ['Rain']
                         
-                    elif 'Snow' in cond:
+                    elif 'Snow' or 'snow' in cond:
                        weather_data['condition'] = weather_data.get('condition', []) + ['Snow']
                     else:
                        weather_data['condition'] = weather_data.get('condition', []) + ['Sunny']                        
