@@ -82,7 +82,7 @@ def get_weather_data(location_info_list, start_date, api_key):
                     cond = hour.d.get('summary', '')
 
                     #For cloudy weather, we will treat it as rain, clear as sunny and snow as snow
-                    if 'Clear' not in cond:
+                    if 'Clear' or 'clear' not in cond:
                         weather_data['condition'] = weather_data.get('condition', []) + ['Rain']
                         
                     elif 'Snow' or 'snow' in cond:
